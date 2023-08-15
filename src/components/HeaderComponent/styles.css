@@ -1,0 +1,9 @@
+#section-logo {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#logo {
+  width: 50%;
+}
