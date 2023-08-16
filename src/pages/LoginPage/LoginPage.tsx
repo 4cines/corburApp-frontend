@@ -16,10 +16,13 @@ import {
 import corburLogo from "../../../resources/CORBUR (2).jpg";
 
 import "./styles.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { loginService } from "../../service";
+import { AuthContext } from "../../context/AuthContext";
 
 const LoginPage: React.FC = () => {
+  const { login } = useContext(AuthContext);
+
   const [inputUser, setInputUser] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [error, setError] = useState("");
@@ -30,7 +33,11 @@ const LoginPage: React.FC = () => {
   const handleSendUser = async () => {
     try {
       setError("");
-      await loginService(inputUser, inputPassword);
+      const tokenData = await loginService({
+        userName: inputUser,
+        password: inputPassword,
+      });
+      login(tokenData);
     } catch (err: any) {
       console.log(err);
       setError(err.message);
