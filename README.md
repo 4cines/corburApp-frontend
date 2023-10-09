@@ -1,8 +1,11 @@
 # corburApp-frontend
-This movile app has to main management the clients, and projects to Corbur bussines. 
+This mobile application is intended for primary client and project management for Corbur's business.
+
+## Status
+In process! 
 
 ## Tecnologies
 TypeScript, React.js, Ionic Famework.
 
 ## Backend
-This frontend connect with the repository "corburApp-backend".
+This frontend connects to the "corburApp-backend" repository.
